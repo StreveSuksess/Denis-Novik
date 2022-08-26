@@ -1,0 +1,161 @@
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+
+  font-family: "Gilroy-Bold";
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  font-weight: bold;
+
+  background: $white;
+  @include breakpoint($big-mobile-bp) {
+    position: relative;
+  }
+}
+
+.nav {
+  margin: 3.2rem auto;
+  @include breakpoint($big-mobile-bp) {
+    opacity: 0;
+    z-index: -1;
+    transition: none;
+    position: absolute;
+    margin: 0;
+    padding-top: 3.2rem;
+  }
+}
+
+.nav__ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @include breakpoint($big-mobile-bp) {
+    flex-direction: column;
+  }
+}
+
+.nav__li {
+  a {
+    color: $secondary;
+    transition: 0.3s;
+    &:hover {
+      color: $primary;
+    }
+  }
+  &.active a {
+    color: $primary;
+  }
+}
+
+.header__hr {
+  border: none;
+  background-color: $header__hr-color;
+  color: $header__hr-color;
+  height: 0.2rem;
+  @include breakpoint($big-mobile-bp) {
+    display: none;
+  }
+}
+
+.burger {
+  display: none;
+  height: 0.4rem;
+  width: 3.3rem;
+  border: none;
+  position: absolute;
+  background-color: $black;
+  cursor: pointer;
+  transition: background 0.5s, transform 0.5s;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    background-color: $black;
+    height: 0.4rem;
+    width: 3.3rem;
+    transition: background 0.5s, transform 0.5s;
+    @include breakpoint($big-mobile-bp) {
+      top: 0.8rem;
+    }
+  }
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    background-color: $black;
+    height: 0.4rem;
+    width: 3.3rem;
+    @include breakpoint($big-mobile-bp) {
+      bottom: 0.8rem;
+    }
+  }
+  @include breakpoint($big-mobile-bp) {
+    display: block;
+    top: 8.6rem;
+    right: 3rem;
+  }
+}
+
+.show-nav {
+  @include breakpoint($big-mobile-bp) {
+    overflow: hidden;
+    .change-language {
+      display: block;
+      z-index: 100;
+      right: 0;
+      bottom: 5.8rem;
+      font-size: 3.4rem;
+      line-height: 4.2rem;
+      &.anim-active {
+        opacity: 1;
+      }
+    }
+    .nav {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 120vh;
+      width: 100%;
+      z-index: 100;
+      background: #fff;
+      transform: none;
+      opacity: 1;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    .nav__ul {
+      width: 90%;
+    }
+    .nav__li {
+      padding: 3.4rem 0;
+      padding-left: 2.9rem;
+      width: 79%;
+      a {
+        opacity: 1;
+        width: 100%;
+        font-size: 3.4rem;
+        line-height: 4.2rem;
+      }
+    }
+    .burger {
+      opacity: 1;
+      z-index: 100;
+      background: $secondary;
+      transform: rotate(45deg);
+      right: 5rem;
+      &::after {
+        opacity: 1;
+        background: $secondary;
+        transform: rotate(90deg) translateX(-0.8rem);
+      }
+      &::before {
+        opacity: 0;
+      }
+    }
+  }
+}

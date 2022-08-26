@@ -1,0 +1,22 @@
+.section {
+  background: $white;
+  &--gray {
+    background: $section-color;
+  }
+}
+
+.section__title {
+  font-family: "Gilroy-Bold";
+  font-weight: bold;
+  font-size: 3.4rem;
+  line-height: 4.2rem;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(5rem);
+  transition: opacity 0.5s, transform 1s;
+  &.anim-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,64 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url(../fonts/Gilroy-Bold.ttf);
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url(../fonts/Gilroy-Medium.ttf);
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+body {
+  background-color: $white;
+  font-size: 21px;
+  color: $primary;
+
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Gilroy-Bold";
+  font-weight: bold;
+}
+
+h2,
+p,
+a,
+article {
+  opacity: 0;
+  transform: translateY(5rem);
+  transition: opacity 0.5s, transform 1s;
+  &.anim-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@import "blocks/container";
+@import "blocks/header";
+@import "blocks/intro";
+@import "blocks/section";
+@import "blocks/about";
+@import "blocks/skills";
+@import "blocks/portfolio";
+@import "blocks/footer";

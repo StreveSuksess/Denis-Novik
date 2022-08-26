@@ -1,0 +1,47 @@
+.about {
+  padding: 12rem 0 10.7rem;
+  @include breakpoint($mobile-bp) {
+    padding: 8.1rem 0 7.6rem;
+  }
+}
+
+.about__text {
+  margin: 0 auto;
+  margin-top: 3.5rem;
+  @include breakpoint($mobile-bp) {
+    margin-top: 4rem;
+  }
+}
+
+.about__p {
+  font-family: "Gilroy-Medium";
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+    @include breakpoint($mobile-bp) {
+      margin-top: 4.5rem;
+    }
+  }
+
+  &:nth-child(1n) {
+    opacity: 0;
+    transform: translateX(5rem);
+    transition: opacity 0.5s, transform 1s;
+    &.anim-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  &:nth-child(2n) {
+    opacity: 0;
+    transform: translateX(-5rem);
+    transition: opacity 0.5s, transform 1s;
+    &.anim-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

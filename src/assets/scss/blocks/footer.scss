@@ -1,0 +1,87 @@
+.footer {
+  padding: 11.4rem 0 12.3rem;
+  height: 100vh;
+  @include breakpoint($big-mobile-bp) {
+    height: 80vh;
+  }
+  @include breakpoint($mobile-bp) {
+    padding: 8.2rem 0 9rem;
+  }
+}
+
+.footer__title {
+  font-size: 3.4rem;
+  line-height: 4.2rem;
+  text-align: center;
+
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  @include breakpoint($mobile-bp) {
+    margin-bottom: 4rem;
+  }
+}
+
+.footer__text {
+  font-family: "Gilroy-Medium";
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  text-align: center;
+
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2.9rem;
+  max-width: 27.5rem;
+  @include breakpoint($mobile-bp) {
+    margin-bottom: 4rem;
+  }
+}
+
+.footer__button {
+  display: block;
+  width: 18rem;
+  height: 4.2rem;
+  border-radius: 2rem;
+  margin: 0 auto;
+  margin-bottom: 9.2rem;
+  background: $primary;
+
+  font-family: "Gilroy-Bold";
+  font-size: 1.8rem;
+  line-height: 4.2rem;
+  text-align: center;
+  color: $white;
+
+  transition: background 0.5s, color 0.5s, opacity 0.5s, transform 1s;
+
+  &:hover {
+    background: $white;
+    color: $primary;
+  }
+  @include breakpoint($mobile-bp) {
+    margin-bottom: 4.2rem;
+  }
+}
+
+.footer__social {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+
+  margin-bottom: 4.5rem;
+  @include breakpoint($mobile-bp) {
+    margin-bottom: 4.5rem;
+  }
+}
+
+.footer__subtext {
+  font-family: "Gilroy-Medium";
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-align: center;
+  color: $secondary;
+
+  display: block;
+  max-width: 24.3rem;
+  margin: 0 auto;
+}

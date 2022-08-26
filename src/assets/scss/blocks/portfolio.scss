@@ -1,0 +1,48 @@
+.portfolio {
+  padding: 11.2rem 0 9.6rem;
+  @include breakpoint($mobile-bp) {
+    padding: 8.1rem 0 8rem;
+  }
+}
+
+.portfolio__works {
+  margin-top: 4.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 9.9rem;
+  @include breakpoint($mobile-bp) {
+    margin-top: 8rem;
+    gap: 7.8rem;
+  }
+}
+
+.portfolio__work a {
+  display: block;
+}
+
+.portfolio__work__picture * {
+  width: 100%;
+  height: auto;
+
+  margin-bottom: 4.4rem;
+  @include breakpoint($mobile-bp) {
+    margin-bottom: 3.3rem;
+  }
+}
+
+.portfolio__work__title {
+  font-family: "Gilroy-Medium";
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  text-align: center;
+  text-decoration-line: underline;
+  color: $primary;
+
+  display: block;
+
+  transition: transform 1s;
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
